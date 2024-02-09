@@ -21,17 +21,17 @@ public class AddNoteActivity extends AppCompatActivity {
     private RadioButton radioButtonHigh;
     private Button buttonSave;
 
-   private AddNoteViewModel viewModel;
+    private AddNoteViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-        viewModel=new ViewModelProvider(this).get(AddNoteViewModel.class);
+        viewModel = new ViewModelProvider(this).get(AddNoteViewModel.class);
         viewModel.getShouldCloseScreen().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean shouldClose) {
-                if (shouldClose){
+                if (shouldClose) {
                     finish();
                 }
             }
